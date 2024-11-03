@@ -6,9 +6,9 @@ import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 export const MyHub = () => {
   return (
-    <section className="py-16">
+    <section className="py-14">
       <div className="container">
-        <article className="mb-6 flex flex-col items-center">
+        <article className="mb-6 flex flex-col items-center ">
           <Image
             src={logo}
             alt="alien coding something"
@@ -19,14 +19,15 @@ export const MyHub = () => {
             <div className="mb-2 text-sm font-mono">ezequielMadrid</div>
           </aside>
           <h1 className="mb-4 mt-4 font-mono">Let's Work Together!</h1>
-          <p className="text-center text-xs font-bold">
+          <p className="text-center pb-4 text-xs font-bold border-b-2 border-slate-300">
             I've a solid foundation in backend development, along with extensive
             experience in administrative and human resources roles. I've worked
             in companies with industry-leading clients, which has strengthened
             my communication skills and problem-solving abilities under tight
             deadlines. I've built work teams rooted in mutual respect, and I'm
             eager to take on new challenges where I can continue to grow both
-            personally and professionally.
+            personally and professionally, while contributing to the success of
+            the organization. Please don't hesitate to talk me!
           </p>
         </article>
         <article className="mx-10 text-center gap-8">
