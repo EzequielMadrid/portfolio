@@ -1,13 +1,13 @@
 import { Header } from "@/sections/Header";
-import { HeroSection } from "@/sections/Hero";
-import { ProjectsSection } from "@/sections/Projects";
+import { MyHub } from "@/sections/Hub";
+import { Applications } from "@/sections/Apps";
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <HeroSection />
-      <ProjectsSection />
+      <MyHub />
+      <Applications />
     </div>
   );
 }

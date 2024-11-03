@@ -42,6 +42,10 @@ const myApps = [
   }, */
 ];
 
-export const ProjectsSection = () => {
-  return <section>Projects Section</section>;
+export const Applications = () => {
+  return (
+    <section>
+      <div className="container"></div>
+    </section>
+  );
 };
