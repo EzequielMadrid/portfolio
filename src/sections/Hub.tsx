@@ -20,13 +20,13 @@ export const MyHub = () => {
           </aside>
           <h1 className="mb-4 mt-4 font-mono">Let's Work Together!</h1>
           <p className="text-center text-xs font-bold">
-            Solid foundation in backend development. Also an extensive
-            experience in administrative and human resources roles. I have
-            worked in companies where the clients are market leaders. This has
-            led to better communication in me and a problem-solving ability to
-            handle complex situations when time is tight! I've formed work teams
-            where respect is always the root. Willing to take on new challenges
-            where I can continue to grow personally and professionally.
+            I've a solid foundation in backend development, along with extensive
+            experience in administrative and human resources roles. I've worked
+            in companies with industry-leading clients, which has strengthened
+            my communication skills and problem-solving abilities under tight
+            deadlines. I've built work teams rooted in mutual respect, and I'm
+            eager to take on new challenges where I can continue to grow both
+            personally and professionally.
           </p>
         </article>
         <article className="mx-10 text-center gap-8">
