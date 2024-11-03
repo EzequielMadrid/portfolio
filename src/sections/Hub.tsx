@@ -31,7 +31,7 @@ export const MyHub = () => {
         </article>
         <article className="mx-10 text-center gap-8">
           <p className="mb-4 text-xs flex items-center justify-center gap-2">
-            <FaWhatsapp className="text-4xl text-green-500" />
+            <FaWhatsapp className="hover:text-4xl text-2xl text-green-500" />
             <a
               href="https://wa.me/5491234567890"
               target="_blank"
@@ -42,7 +42,7 @@ export const MyHub = () => {
             </a>
           </p>
           <p className="mb-4 text-xs flex items-center justify-center gap-2">
-            <FaEnvelope className="text-xl text-red-500" />
+            <FaEnvelope className="hover:text-2xl text-xl text-cyan-200" />
             <a href="mailto:ezequiel@example.com" className="text-cyan-100">
               ***@gmail.com
             </a>
