@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+#hub,
+#apps {
+  scroll-margin-top: 3.5rem; /* control the py in compos */
+}
+
 @layer base {
   .links {
     @apply px-4 py-1.5 rounded-full font-mono font-semibold text-sm transition duration-300 font-serif text-cyan-200 hover:bg-cyan-800 hover:text-cyan-50;

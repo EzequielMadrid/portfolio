@@ -6,7 +6,7 @@ import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 export const MyHub = () => {
   return (
-    <section className="py-14">
+    <section className="h-screen py-14">
       <div className="container">
         <article className="mb-6 flex flex-col items-center ">
           <Image

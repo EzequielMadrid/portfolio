@@ -44,8 +44,14 @@ const myApps = [
 
 export const Applications = () => {
   return (
-    <section>
-      <div className="container"></div>
+    <section className="h-screen py-14">
+      <div className="container">
+        <h5>Check out my projects</h5>
+        <h2>Links in the cards</h2>
+        <p>
+          Differente kinds of personal projects: SaaS, Chats, Red Socials, etc
+        </p>
+      </div>
     </section>
   );
 };

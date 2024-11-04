@@ -4,10 +4,14 @@ import { Applications } from "@/sections/Apps";
 
 export default function Home() {
   return (
-    <div>
+    <div className="scrollbar-thin scrollbar-thumb-cyan-200 scrollbar-track-slate-800 h-screen overflow-y-scroll">
       <Header />
-      <MyHub />
-      <Applications />
+      <section id="hub">
+        <MyHub />
+      </section>
+      <section id="apps">
+        <Applications />
+      </section>
     </div>
   );
 }
