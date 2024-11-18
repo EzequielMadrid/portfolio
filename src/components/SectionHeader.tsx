@@ -8,13 +8,13 @@ export const SectionHeader = ({
   description: string;
 }) => {
   return (
-    <section className="mb-10">
+    <section className="mb-4">
       <div>
-        <h5 className="mb-4 uppercase text-center font-mono font-semibold tracking-widest text-emerald-200">
+        <h5 className="mb-2 uppercase text-center font-mono font-semibold tracking-widest text-emerald-200">
           {eyebrow}
         </h5>
       </div>
-      <h2 className="mb-2 text-center text-3xl font-serif">{title}</h2>
+      <h2 className="text-center text-xl font-serif">{title}</h2>
       <p className="text-center font-bold">{description}</p>
     </section>
   );

@@ -47,14 +47,14 @@ const myApps = [
 
 export const Applications = () => {
   return (
-    <section>
+    <section className="relative z-10">
       <div className="container">
         <SectionHeader
           title={"My APPs"}
           eyebrow={"Check out any projects"}
           description={"💻"}
         />
-        <article className="flex flex-col">
+        <article className="flex flex-col gap-8">
           {myApps.map((x) => (
             <div
               key={x.title}

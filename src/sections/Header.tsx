@@ -1,6 +1,6 @@
 export const Header = () => {
   return (
-    <section className="sticky top-2 flex justify-center items-center">
+    <section className="sticky z-50 top-2 flex justify-center items-center">
       <nav className="p-0.5 gap-1 flex rounded-full border-2 border-cyan-800 bg-slate-800">
         <a href="#hub" className="links">
           Hub
