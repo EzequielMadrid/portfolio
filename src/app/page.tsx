@@ -1,6 +1,7 @@
 import { Header } from "@/sections/Header";
 import { MyHub } from "@/sections/Hub";
 import { Applications } from "@/sections/Apps";
+import { AboutSection } from "@/sections/About";
 
 export default function Home() {
   return (
@@ -11,6 +12,9 @@ export default function Home() {
       </section>
       <section id="apps">
         <Applications />
+      </section>
+      <section id="about">
+        <AboutSection />
       </section>
     </div>
   );

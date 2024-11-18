@@ -1,14 +1,17 @@
-/* import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
+import Image from "next/image";
+import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
- */
+import { SectionHeader } from "@/components/SectionHeader";
+import CheckCircleIcon from "@/assets/icons/check-circle.svg";
+import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 
 const myApps = [
-  /*   {
-    company: "Acme Corp",
+  {
+    name: "Acme Corp",
     year: "2022",
     title: "Dark Saas Landing Page",
-    results: [
+    tests: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
@@ -17,10 +20,10 @@ const myApps = [
     image: darkSaasLandingPage,
   },
   {
-    company: "Innovative Co",
+    name: "Innovative Co",
     year: "2021",
     title: "Light Saas Landing Page",
-    results: [
+    tests: [
       { title: "Boosted sales by 20%" },
       { title: "Expanded customer reach by 35%" },
       { title: "Increased brand awareness by 15%" },
@@ -29,28 +32,64 @@ const myApps = [
     image: lightSaasLandingPage,
   },
   {
-    company: "Quantum Dynamics",
+    name: "Quantum Dynamics",
     year: "2023",
     title: "AI Startup Landing Page",
-    results: [
+    tests: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
     link: "https://youtu.be/Z7I5uSRHMHg",
     image: aiStartupLandingPage,
-  }, */
+  },
 ];
 
 export const Applications = () => {
   return (
-    <section className="h-screen py-14">
+    <section>
       <div className="container">
-        <h5>Check out my projects</h5>
-        <h2>Links in the cards</h2>
-        <p>
-          Differente kinds of personal projects: SaaS, Chats, Red Socials, etc
-        </p>
+        <SectionHeader
+          title={"My APPs"}
+          eyebrow={"Check out any projects"}
+          description={"💻"}
+        />
+        <article className="flex flex-col">
+          {myApps.map((x) => (
+            <div
+              key={x.title}
+              className="px-4 pt-8 relative z-0 overflow-hidden rounded-3xl after:-z-10 after:content-[''] after:absolute after:inset-0  after:outline-2 after:outline after:-outline-offset-20 after:rounded-3xl after:outline-slate-100 bg-emerald-950 shadow-md shadow-slate-600"
+            >
+              <section className="mb-2 flex">
+                <div className="inline-flex gap-2 uppercase tracking-widest text-sm text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-sky-400">
+                  <span>{x.name}</span>
+                  <span>&bull;</span>
+                  <span>{x.year}</span>
+                </div>
+              </section>
+              <h3 className="font-mono text-2xl">{x.title}</h3>
+              <hr className="mb-4 rounded-full border-t-2 border-cyan-900" />
+              <ul className="mb-6 flex flex-col gap-4">
+                {x.tests.map((myApp, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center gap-2 text-xs text-slate-300"
+                  >
+                    <CheckCircleIcon className="size-3" />
+                    <span className="font-serif">{myApp.title}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href={x.link}>
+                <button className="mb-6 w-full h-8 inline-flex items-center justify-center gap-2 rounded-full font-semibold text-slate-300 hover:bg-slate-400 hover:text-cyan-900 bg-slate-600">
+                  <span className="font-mono">Explore it</span>
+                  <ArrowUpRightIcon className="size-3" />
+                </button>
+              </a>
+              <Image src={x.image} alt={x.title} className="-mb-4" />
+            </div>
+          ))}
+        </article>
       </div>
     </section>
   );
