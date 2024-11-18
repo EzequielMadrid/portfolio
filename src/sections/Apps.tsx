@@ -58,7 +58,7 @@ export const Applications = () => {
           {myApps.map((x) => (
             <div
               key={x.title}
-              className="px-4 pt-8 relative z-0 overflow-hidden rounded-3xl after:-z-10 after:content-[''] after:absolute after:inset-0  after:outline-2 after:outline after:-outline-offset-20 after:rounded-3xl after:outline-slate-100 bg-emerald-950 shadow-md shadow-slate-600"
+              className="mb-2 px-4 pt-8 relative z-0 overflow-hidden rounded-3xl after:-z-10 after:content-[''] after:absolute after:inset-0  after:outline-2 after:outline after:-outline-offset-20 after:rounded-3xl after:outline-slate-100 bg-emerald-950 shadow-md shadow-slate-600"
             >
               <section className="mb-2 flex">
                 <div className="inline-flex gap-2 uppercase tracking-widest text-sm text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-sky-400">
