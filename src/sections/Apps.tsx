@@ -1,7 +1,7 @@
 import Image from "next/image";
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import trinityChatApp from "@/assets/images/trinity-chat.png";
+import itNewsApp from "@/assets/images/it-news.png";
+import techStore from "@/assets/images/tech-store.png";
 import { SectionHeader } from "@/components/SectionHeader";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -17,7 +17,7 @@ const myApps = [
       { title: "Increased mobile traffic by 35%" },
     ],
     link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
+    image: trinityChatApp,
   },
   {
     name: "Innovative Co",
@@ -29,7 +29,7 @@ const myApps = [
       { title: "Increased brand awareness by 15%" },
     ],
     link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    image: itNewsApp,
   },
   {
     name: "Quantum Dynamics",
@@ -41,7 +41,7 @@ const myApps = [
       { title: "Increased mobile traffic by 35%" },
     ],
     link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    image: techStore,
   },
 ];
 
