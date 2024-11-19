@@ -60,33 +60,35 @@ export const Applications = () => {
               key={x.title}
               className="mb-2 px-4 pt-8 relative z-0 overflow-hidden rounded-3xl after:-z-10 after:content-[''] after:absolute after:inset-0  after:outline-2 after:outline after:-outline-offset-20 after:rounded-3xl after:outline-slate-100 bg-emerald-950 shadow-md shadow-slate-600"
             >
-              <section className="mb-2 flex">
-                <div className="inline-flex gap-2 uppercase tracking-widest text-sm text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-sky-400">
-                  <span>{x.name}</span>
-                  <span>&bull;</span>
-                  <span>{x.year}</span>
+              <div className="lg:grid lg:grid-cols-2 lg:gap-16">
+                <div>
+                  <div className="inline-flex gap-2 uppercase tracking-widest font-semibold text-sm text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-sky-400">
+                    <span>{x.name}</span>
+                    <span>&bull;</span>
+                    <span>{x.year}</span>
+                  </div>
+                  <h3 className="font-mono text-2xl md:text-3xl">{x.title}</h3>
+                  <hr className="mb-4 rounded-full border-t-2 border-cyan-900" />
+                  <ul className="mb-6 flex flex-col gap-4">
+                    {x.tests.map((myApp, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center gap-2 text-xs md:text-base text-slate-300"
+                      >
+                        <CheckCircleIcon className="size-3 md:size-4" />
+                        <span className="font-mono">{myApp.title}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a href={x.link}>
+                    <button className="mb-6 p-4 w-full h-8 md:w-auto inline-flex items-center justify-center gap-2 rounded-full font-semibold text-slate-300 hover:bg-slate-400 hover:text-cyan-900 bg-slate-600">
+                      <span className="font-mono md:text-xl">Explore it</span>
+                      <ArrowUpRightIcon className="size-3 md:size-5" />
+                    </button>
+                  </a>
                 </div>
-              </section>
-              <h3 className="font-mono text-2xl">{x.title}</h3>
-              <hr className="mb-4 rounded-full border-t-2 border-cyan-900" />
-              <ul className="mb-6 flex flex-col gap-4">
-                {x.tests.map((myApp, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center gap-2 text-xs text-slate-300"
-                  >
-                    <CheckCircleIcon className="size-3" />
-                    <span className="font-serif">{myApp.title}</span>
-                  </li>
-                ))}
-              </ul>
-              <a href={x.link}>
-                <button className="mb-6 w-full h-8 inline-flex items-center justify-center gap-2 rounded-full font-semibold text-slate-300 hover:bg-slate-400 hover:text-cyan-900 bg-slate-600">
-                  <span className="font-mono">Explore it</span>
-                  <ArrowUpRightIcon className="size-3" />
-                </button>
-              </a>
-              <Image src={x.image} alt={x.title} className="-mb-4" />
+                <Image src={x.image} alt={x.title} className="-mb-4" />
+              </div>
             </div>
           ))}
         </article>
