@@ -16,7 +16,7 @@ const myApps = [
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://github.com/EzequielMadrid",
     image: trinityChatApp,
   },
   {
@@ -28,7 +28,7 @@ const myApps = [
       { title: "Expanded customer reach by 35%" },
       { title: "Increased brand awareness by 15%" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "https://github.com/EzequielMadrid",
     image: itNewsApp,
   },
   {
@@ -40,7 +40,7 @@ const myApps = [
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
+    link: "https://github.com/EzequielMadrid",
     image: techStore,
   },
 ];
@@ -68,7 +68,7 @@ export const Applications = () => {
                     <span>{x.year}</span>
                   </div>
                   <h3 className="font-mono text-2xl md:text-3xl">{x.title}</h3>
-                  <hr className="mb-4 rounded-full border-t-2 border-cyan-900" />
+                  <hr className="mb-4 rounded-full border-t-2 border-slate-600" />
                   <ul className="mb-6 flex flex-col gap-4">
                     {x.tests.map((myApp, index) => (
                       <li
@@ -81,7 +81,7 @@ export const Applications = () => {
                     ))}
                   </ul>
                   <a href={x.link}>
-                    <button className="mb-6 p-4 w-full h-8 md:w-auto inline-flex items-center justify-center gap-2 rounded-full font-semibold text-slate-300 hover:bg-slate-400 hover:text-cyan-900 bg-slate-600">
+                    <button className="mb-6 p-4 w-full h-8 inline-flex items-center justify-center gap-2 rounded-full font-semibold text-slate-300 hover:bg-slate-400 hover:text-cyan-950 bg-slate-600">
                       <span className="font-mono md:text-xl">Explore it</span>
                       <ArrowUpRightIcon className="size-3 md:size-5" />
                     </button>
