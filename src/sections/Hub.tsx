@@ -6,7 +6,7 @@ import logo from "@/assets/images/logo.png";
 
 export const MyHub = () => {
   return (
-    <section className="h-screen py-10">
+    <section className="h-screen py-8">
       <div className="container">
         <article className="mb-6 flex flex-col items-center ">
           <Image
@@ -30,6 +30,17 @@ export const MyHub = () => {
             the organization. Please don't hesitate to talk me!
           </p>
         </article>
+        <div className="h-44 sm:h-40 w-full rounded-xl bg-black">
+          <video
+            className="w-full h-full object-cover rounded-xl"
+            autoPlay
+            loop
+            muted
+          >
+            <source src="/videos/waves.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </section>
   );
