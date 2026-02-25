@@ -34,7 +34,7 @@ const AnimatedSection = ({ subTitle, title, text, textColor }) => {
               filter: "blur(0px)",
             }}
             transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full px-2 uppercase text-center md:text-left text-xl md:text-4xl lg:text-6xl select-none tracking-widest rounded-r-full backdrop-blur-sm gap-4 border border-cyan-500/30 text-cyan-100 bg-slate-950/80 shadow-[0_0_40px_rgba(6,182,212,0.15)]"
+            className="w-full md:py-2 px-2 uppercase text-center md:text-left text-xl md:text-4xl lg:text-6xl select-none tracking-widest rounded-r-full backdrop-blur-sm gap-4 border border-cyan-500/30 text-cyan-100 bg-slate-950/80 shadow-[0_0_40px_rgba(6,182,212,0.15)]"
             style={{
               transformStyle: "preserve-3d",
               transformOrigin: "center center",
