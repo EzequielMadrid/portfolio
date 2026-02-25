@@ -37,7 +37,7 @@ const AnimatedSection = ({ subTitle, title, text, textColor }) => {
               filter: "blur(0px)",
             }}
             transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-fit px-2 uppercase text-2xl md:text-4xl lg:text-8xl rounded-sm backdrop-blur-sm flex gap-4 font-mono border border-cyan-500/30 text-cyan-100 bg-slate-950/80 shadow-[0_0_40px_rgba(6,182,212,0.15)]"
+            className="w-fit px-2 uppercase text-2xl md:text-4xl lg:text-6xl rounded-sm backdrop-blur-sm flex gap-4 font-mono border border-cyan-500/30 text-cyan-100 bg-slate-950/80 shadow-[0_0_40px_rgba(6,182,212,0.15)]"
             style={{
               transformStyle: "preserve-3d",
               transformOrigin: "center center",
@@ -47,7 +47,6 @@ const AnimatedSection = ({ subTitle, title, text, textColor }) => {
           </motion.h1>
         </div>
       </div>
-
       <div className={`relative mt-10 ${textColor}`}>
         <motion.p
           initial={{ opacity: 0, y: 50, scale: 0.9, filter: "blur(12px)" }}

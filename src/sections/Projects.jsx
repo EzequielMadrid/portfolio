@@ -7,6 +7,7 @@ import { Center, OrbitControls } from "@react-three/drei";
 import { myProjects } from "../constants/index.js";
 import { Button } from "@/components/ui/button";
 import Computer from "../components/Computer.jsx";
+import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 
 const projectCount = myProjects.length;
 
@@ -55,7 +56,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative z-10 min-h-screen text-slate-300 flex flex-col"
+      className="relative z-10 min-h-screen flex flex-col text-slate-300"
     >
       <motion.h2
         className="mb-4 mt-16 w-fit select-none rounded-md relative mx-auto px-4 py-2 text-center text-md md:text-xl font-light uppercase tracking-wide bg-slate-950/70 border border-cyan-500/30 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.25)]"
@@ -100,9 +101,9 @@ const Projects = () => {
         <div className="p-2 flex justify-between items-center mt-2 w-full max-w-100">
           <Button
             onClick={() => handleNavigation("previous")}
-            className="bg-cyan-700 text-black font-bold tracking-wider shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-400 transition-all duration-300"
+            className="bg-cyan-700 text-black font-bold tracking-wider shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
           >
-            PREVIOUS
+            <ArrowBigLeft />
           </Button>
           <a
             className="flex items-center gap-2 cursor-pointer text-white"
@@ -110,15 +111,15 @@ const Projects = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p className="px-4 font-light tracking-widest text-sm md:text-lg rounded-full border-2 border-cyan-500/30 hover:bg-slate-950">
+            <p className="px-4 select-none font-light tracking-widest text-sm md:text-lg rounded-full border-2 border-cyan-500/30 hover:bg-slate-950">
               Live Demo
             </p>
           </a>
           <Button
             onClick={() => handleNavigation("next")}
-            className="bg-cyan-700 text-black font-bold tracking-wider shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-400 transition-all duration-300"
+            className="bg-cyan-700 text-black font-bold tracking-wider shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
           >
-            NEXT
+            <ArrowBigRight />
           </Button>
         </div>
       </div>
