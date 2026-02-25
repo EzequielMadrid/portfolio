@@ -11,7 +11,7 @@ import Computer from "../components/Computer.jsx";
 const projectCount = myProjects.length;
 
 const getScale = () => {
-  if (window.innerWidth < 640) return 2.4;
+  if (window.innerWidth < 640) return 2.6;
   if (window.innerWidth < 1024) return 2.8;
   return 3.2;
 };
@@ -71,7 +71,7 @@ const Projects = () => {
         APPs
       </motion.h2>
       <div className="flex grow flex-col gap-2 w-full items-center lg:mt-2 mt-8 px-2 md:px-4 lg:px-0">
-        <div className="rounded-lg w-[90%] sm:w-[80%] lg:w-[70%] h-112.5 md:h-132.5 lg:h-135 shadow-xl shadow-cyan-950 border-2 border-cyan-900">
+        <div className="rounded-lg w-[90%] sm:w-[80%] lg:w-[70%] h-112.5 md:h-132.5 lg:h-135 shadow-xl shadow-cyan-950 border-2 border-cyan-500/30">
           <Canvas shadows camera={{ position: [0, 0, 3], fov: 45 }}>
             <ambientLight intensity={3} />
             <directionalLight
@@ -89,12 +89,12 @@ const Projects = () => {
                     key={currentProject.texture}
                     texture={currentProject.texture}
                     scale={scale}
-                    position={[0, -0.8, 0]}
+                    position={[-0.1, -0.8, 0]}
                   />
                 </group>
               </Center>
             </Suspense>
-            <OrbitControls enablePan enableZoom={false} rotateSpeed={2} />
+            <OrbitControls enablePan rotateSpeed={2} />
           </Canvas>
         </div>
         <div className="p-2 flex justify-between items-center mt-2 w-full max-w-100">
@@ -110,7 +110,9 @@ const Projects = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p className="font-light tracking-widest text-lg">Live Demo</p>
+            <p className="px-4 font-light tracking-widest text-lg rounded-full border-2 border-cyan-500/30 hover:bg-slate-950">
+              Live Demo
+            </p>
           </a>
           <Button
             onClick={() => handleNavigation("next")}
