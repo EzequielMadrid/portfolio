@@ -13,7 +13,7 @@ const AnimatedSection = ({ subTitle, title, text, textColor }) => {
           initial={{ opacity: 0, y: 40, filter: "blur(6px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="w-fit px-4 py-2 text-xs md:text-lg  font-light tracking-widest uppercase rounded-r-full text-slate-100 bg-cyan-950"
+          className="w-fit px-4 py-2 text-xs md:text-lg select-none font-light tracking-widest uppercase rounded-r-full text-slate-100 bg-cyan-950"
         >
           {subTitle}
         </motion.p>
@@ -37,7 +37,7 @@ const AnimatedSection = ({ subTitle, title, text, textColor }) => {
               filter: "blur(0px)",
             }}
             transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-fit px-2 uppercase text-2xl md:text-4xl lg:text-6xl rounded-sm backdrop-blur-sm flex gap-4 font-mono border border-cyan-500/30 text-cyan-100 bg-slate-950/80 shadow-[0_0_40px_rgba(6,182,212,0.15)]"
+            className="w-fit px-2 uppercase text-2xl md:text-4xl lg:text-6xl select-none rounded-sm backdrop-blur-sm flex gap-4 font-mono border border-cyan-500/30 text-cyan-100 bg-slate-950/80 shadow-[0_0_40px_rgba(6,182,212,0.15)]"
             style={{
               transformStyle: "preserve-3d",
               transformOrigin: "center center",
@@ -52,7 +52,7 @@ const AnimatedSection = ({ subTitle, title, text, textColor }) => {
           initial={{ opacity: 0, y: 50, scale: 0.9, filter: "blur(12px)" }}
           animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 2.2, delay: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mt-5 max-w-md mx-auto sm:ml-auto mr-0 px-4 py-2 text-center sm:text-end text-xs md:text-sm font-light uppercase tracking-wide bg-slate-950/70 border border-cyan-500/30 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.15)]"
+          className="relative mt-5 max-w-md mx-auto sm:ml-auto mr-0 px-4 py-2 select-none text-center sm:text-end text-xs md:text-sm font-light uppercase tracking-wide bg-slate-950/70 border border-cyan-500/30 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.15)]"
         >
           {text}
         </motion.p>

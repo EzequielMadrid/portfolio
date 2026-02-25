@@ -59,7 +59,7 @@ const Projects = () => {
       className="relative z-10 min-h-screen flex flex-col text-slate-300"
     >
       <motion.h2
-        className="mb-4 mt-16 w-fit select-none rounded-md relative mx-auto px-4 py-2 text-center text-md md:text-xl font-light uppercase tracking-wide bg-slate-950/70 border border-cyan-500/30 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.25)]"
+        className="mb-4 mt-6 w-fit select-none rounded-md relative mx-auto px-4 py-2 text-center text-md md:text-xl font-light uppercase tracking-wide bg-slate-950/70 border border-cyan-500/30 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.25)]"
         initial={{ scale: 0.8, rotate: -5, opacity: 0 }}
         animate={{ scale: 1, rotate: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 200, damping: 12, mass: 0.7 }}
@@ -71,7 +71,7 @@ const Projects = () => {
       >
         APPs
       </motion.h2>
-      <div className="flex grow flex-col gap-2 w-full items-center lg:mt-2 mt-8 px-2 md:px-4 lg:px-0">
+      <div className="flex grow flex-col gap-2 w-full items-center lg:mt-2 mt-8 ">
         <div className="rounded-lg w-[90%] sm:w-[80%] lg:w-[70%] h-102.5 md:h-132.5 lg:h-135 shadow-xl shadow-cyan-950 border-2 border-cyan-500/30">
           <Canvas shadows camera={{ position: [0, 0, 3], fov: 45 }}>
             <ambientLight intensity={3} />
@@ -98,7 +98,7 @@ const Projects = () => {
             <OrbitControls enablePan rotateSpeed={2} />
           </Canvas>
         </div>
-        <div className="p-2 flex justify-between items-center mt-2 w-full max-w-100">
+        <div className="mb-4 p-2 flex justify-between items-center mt-2 w-full max-w-100">
           <Button
             onClick={() => handleNavigation("previous")}
             className="bg-cyan-700 text-black font-bold tracking-wider shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
@@ -122,6 +122,21 @@ const Projects = () => {
             <ArrowBigRight />
           </Button>
         </div>
+        <footer className="block text-center text-sm text-slate-400 px-6 leading-relaxed">
+          <p className="block text-center text-sm text-slate-400 mt-6 px-6 leading-relaxed">
+            You can navigate through the projects using the arrows 👆 If you’d
+            like to see how each one is built, check the full code on my
+            <a
+              href="https://github.com/EzequielMadrid"
+              target="_blank"
+              rel="noreferrer"
+              className="text-cyan-600 font-medium hover:text-cyan-500 transition-colors duration-300 ml-1"
+            >
+              GitHub
+            </a>
+            .
+          </p>
+        </footer>
       </div>
     </section>
   );
