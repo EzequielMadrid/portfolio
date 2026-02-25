@@ -71,7 +71,7 @@ const Projects = () => {
         APPs
       </motion.h2>
       <div className="flex grow flex-col gap-2 w-full items-center lg:mt-2 mt-8 px-2 md:px-4 lg:px-0">
-        <div className="rounded-lg w-[90%] sm:w-[80%] lg:w-[70%] h-112.5 md:h-132.5 lg:h-135 shadow-xl shadow-cyan-950 border-2 border-cyan-500/30">
+        <div className="rounded-lg w-[90%] sm:w-[80%] lg:w-[70%] h-102.5 md:h-132.5 lg:h-135 shadow-xl shadow-cyan-950 border-2 border-cyan-500/30">
           <Canvas shadows camera={{ position: [0, 0, 3], fov: 45 }}>
             <ambientLight intensity={3} />
             <directionalLight
@@ -110,7 +110,7 @@ const Projects = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p className="px-4 font-light tracking-widest text-lg rounded-full border-2 border-cyan-500/30 hover:bg-slate-950">
+            <p className="px-4 font-light tracking-widest text-sm md:text-lg rounded-full border-2 border-cyan-500/30 hover:bg-slate-950">
               Live Demo
             </p>
           </a>

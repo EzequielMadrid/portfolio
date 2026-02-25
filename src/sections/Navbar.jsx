@@ -116,7 +116,7 @@ const Navbar = () => {
       </nav>
       {/* burgerMenu / closeIcon */}
       <div
-        className="w-12 h-12 md:w-18 md:h-18 top-4 right-10 z-60 fixed flex items-center justify-center rounded-full cursor-pointer border-2 border-cyan-900 bg-slate-950 hover:bg-cyan-900"
+        className="w-12 h-12 md:w-18 md:h-18 top-4 right-4 z-60 fixed flex items-center justify-center rounded-full cursor-pointer border-2 border-cyan-900 bg-slate-950 hover:bg-cyan-900"
         onClick={toggleMenu}
       >
         {isOpen ? (

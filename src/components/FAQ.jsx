@@ -34,9 +34,11 @@ const FAQ = () => {
           >
             <button
               onClick={() => setOpen(isOpen ? null : i)}
-              className="w-full flex justify-between items-center p-5"
+              className="w-full flex justify-between items-center p-4"
             >
-              <span className="text-left">{faq.question}</span>
+              <span className="text-left text-xs md:text-sm">
+                {faq.question}
+              </span>
               <motion.span className="text-cyan-700 flex items-center justify-center cursor-pointer">
                 <AnimatePresence mode="wait">
                   {isOpen ? (
@@ -71,7 +73,9 @@ const FAQ = () => {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.35 }}
                 >
-                  <p className="px-5 pb-5 text-slate-200">{faq.answer}</p>
+                  <p className="px-5 pb-5 text-xs md:text-sm lg:text-md text-slate-200">
+                    {faq.answer}
+                  </p>
                 </motion.div>
               )}
             </AnimatePresence>
