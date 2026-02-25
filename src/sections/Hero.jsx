@@ -22,7 +22,7 @@ const Hero = () => {
       >
         <Canvas
           shadows
-          camera={{ position: [0, 0, -10], fov: 17.5, near: 1, far: 20 }}
+          camera={{ position: [0, -1.4, -10], fov: 17.5, near: 1, far: 20 }}
         >
           <ambientLight intensity={0.5} />
           <Float speed={0.5}>
