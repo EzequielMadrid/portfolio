@@ -31,13 +31,13 @@ export const myProjects = [
   {
     id: 1,
     title: "InterMinisterial Forum",
-    href: "https://github.com/EzequielMadrid/InterMinisterial",
+    href: "https://inter-ministerial.vercel.app/",
     texture: "/textures/projects/project1.mp4",
   },
   {
     id: 2,
     title: "Corporation Chat",
-    href: "https://github.com/EzequielMadrid/R00Ms",
+    href: "https://rooms-bkg7.onrender.com/signin",
     texture: "/textures/projects/project2.mp4",
   },
 ];
