@@ -101,7 +101,7 @@ const Projects = () => {
         <div className="mb-4 p-2 flex justify-between items-center mt-2 w-full max-w-100">
           <Button
             onClick={() => handleNavigation("previous")}
-            className="bg-cyan-700 text-black font-bold tracking-wider shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
+            className="cursor pointer bg-cyan-700 text-cyan-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
           >
             <ArrowBigLeft />
           </Button>
@@ -117,15 +117,14 @@ const Projects = () => {
           </a>
           <Button
             onClick={() => handleNavigation("next")}
-            className="bg-cyan-700 text-black font-bold tracking-wider shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
+            className="cursor pointer bg-cyan-700 text-cyan-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
           >
             <ArrowBigRight />
           </Button>
         </div>
         <footer className="block text-center text-sm text-slate-400 px-6 leading-relaxed">
           <p className="block text-center text-sm text-slate-400 mt-6 px-6 leading-relaxed">
-            You can navigate through the projects using the arrows 👆 If you’d
-            like to see how each one is built, check the full code on my
+            Zoom in to get a better view of the App. Check the code on my
             <a
               href="https://github.com/EzequielMadrid"
               target="_blank"
