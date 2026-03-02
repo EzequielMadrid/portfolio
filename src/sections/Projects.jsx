@@ -98,7 +98,7 @@ const Projects = () => {
             <OrbitControls enablePan rotateSpeed={2} />
           </Canvas>
         </div>
-        <div className="mb-4 p-2 flex justify-between items-center mt-2 w-full max-w-100">
+        <div className="mb-4 p-2 flex justify-center sm:justify-between items-center gap-2 md:gap-4 sm:gap-0 mt-2 w-full max-w-100">
           <Button
             onClick={() => handleNavigation("previous")}
             className="cursor pointer bg-cyan-700 text-cyan-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
