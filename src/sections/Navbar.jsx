@@ -102,7 +102,7 @@ const Navbar = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="text-sm hover:text-lg leading-loose tracking-widest uppercase hover:text-white transition-colors duration-300"
+                  className="text-xs md:text-sm leading-loose tracking-widest uppercase hover:text-white transition-colors duration-300"
                   target="_blank"
                 >
                   {"{ "}
