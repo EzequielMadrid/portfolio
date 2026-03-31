@@ -85,7 +85,7 @@ const Projects = () => {
       className="relative z-10 min-h-screen flex flex-col text-slate-300"
     >
       <motion.h2
-        className="mb-2 mt-8 w-fit select-none rounded-md relative mx-auto px-4 py-2 text-center text-md md:text-xl font-light uppercase tracking-wide bg-slate-950/70 border border-cyan-500/30 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.25)]"
+        className="mb-2 mt-2 w-fit select-none rounded-md relative mx-auto px-4 py-2 text-center text-md md:text-xl font-light uppercase tracking-wide bg-slate-950/70 border border-cyan-500/30 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.25)]"
         initial={{ scale: 0.8, rotate: -5, opacity: 0 }}
         animate={{ scale: 1, rotate: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 200, damping: 12, mass: 0.7 }}

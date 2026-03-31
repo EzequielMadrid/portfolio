@@ -12,7 +12,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="w-full min-h-screen relative overflow-hidden">
+    <div className="w-full min-h-screen relative overflow-x-hidden">
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <Canvas camera={{ position: [0, 0, 15] }}>
           <color attach="background" args={["#09122C"]} />
