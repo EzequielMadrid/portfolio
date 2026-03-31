@@ -6,7 +6,7 @@ import AnimatedSection from "../components/AnimatedSection.jsx";
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
-  const text = `Platform empowers growing businesses and startups to achieve scalable advantage with premium results-driven`;
+  const text = `Platform empowers growing startups to achieve scalable advantage with premium results-driven`;
 
   return (
     <section
