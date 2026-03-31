@@ -7,7 +7,12 @@ import { Center, OrbitControls } from "@react-three/drei";
 import { myProjects } from "../constants/index.js";
 import { Button } from "@/components/ui/button";
 import Computer from "../components/Computer.jsx";
-import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
+import {
+  ArrowBigLeft,
+  ArrowBigRight,
+  Github,
+  MousePointer2,
+} from "lucide-react";
 
 const projectCount = myProjects.length;
 
@@ -19,9 +24,14 @@ const getScale = () => {
 
 const Projects = () => {
   const modelRef = useRef();
+  const orbitRef = useRef();
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
   const [scale, setScale] = useState(getScale());
+  const [canvasActive, setCanvasActive] = useState(false);
+
   const handleNavigation = (direction) => {
+    setCanvasActive(false);
+
     if (modelRef.current) {
       const angle = Math.PI * 2;
       gsap.to(modelRef.current.rotation, {
@@ -31,6 +41,7 @@ const Projects = () => {
         ease: "power2.inOut",
       });
     }
+
     setSelectedProjectIndex((prevIndex) => {
       if (direction === "previous") {
         return prevIndex === 0 ? projectCount - 1 : prevIndex - 1;
@@ -39,6 +50,7 @@ const Projects = () => {
       }
     });
   };
+
   useGSAP(() => {
     gsap.fromTo(
       `.animatedText`,
@@ -46,12 +58,26 @@ const Projects = () => {
       { opacity: 1, duration: 1, stagger: 0.2, ease: "power2.inOut" },
     );
   }, [selectedProjectIndex]);
+
   const currentProject = myProjects[selectedProjectIndex];
+
   useEffect(() => {
     const handleResize = () => setScale(getScale());
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  // Clicking outside the canvas deactivates it
+  useEffect(() => {
+    if (!canvasActive) return;
+    const handleClickOutside = (e) => {
+      const canvasWrapper = document.getElementById("canvas-wrapper");
+      if (canvasWrapper && !canvasWrapper.contains(e.target)) {
+        setCanvasActive(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [canvasActive]);
 
   return (
     <section
@@ -71,8 +97,57 @@ const Projects = () => {
       >
         APPs
       </motion.h2>
-      <div className="flex grow flex-col gap-2 w-full items-center lg:mt-2 mt-8 ">
-        <div className="rounded-lg w-[90%] sm:w-[80%] lg:w-[70%] h-102.5 md:h-132.5 lg:h-135 shadow-xl shadow-cyan-950 border-2 border-cyan-500/30">
+      <div className="flex grow flex-col gap-2 w-full items-center lg:mt-2 mt-8">
+        {/* Project info — now on top */}
+        <div className="animatedText w-[90%] sm:w-[80%] lg:w-[70%] px-1 flex flex-col gap-1">
+          <h3 className="font-semibold text-base md:text-lg tracking-widest uppercase underline text-slate-100">
+            {currentProject.title}
+          </h3>
+          <p className="text-sm md:text-base leading-relaxed text-slate-200">
+            {currentProject.description}
+          </p>
+        </div>
+        {/* Nav buttons */}
+        <div className="p-2 flex justify-center sm:justify-between items-center gap-2 md:gap-4 sm:gap-0 w-full max-w-100">
+          <Button
+            onClick={() => handleNavigation("previous")}
+            className="cursor-pointer bg-cyan-700 text-cyan-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
+          >
+            <ArrowBigLeft />
+          </Button>
+          <div className="flex items-center gap-3">
+            <a
+              className="flex items-center gap-2 cursor-pointer text-white"
+              href={currentProject.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <p className="px-3 py-1 select-none font-light tracking-widest text-sm md:text-lg rounded-full border-2 border-cyan-500/30 hover:bg-slate-950">
+                Live Demo
+              </p>
+            </a>
+            <a
+              href={currentProject.gitHref}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1 px-4  py-1 select-none font-light tracking-widest text-sm md:text-lg rounded-full border-2 border-cyan-500/30 hover:bg-slate-950 text-white transition-colors duration-300"
+              aria-label="GitHub repository"
+            >
+              <Github size={18} />
+              <span className="hidden sm:inline">Code</span>
+            </a>
+          </div>
+          <Button
+            onClick={() => handleNavigation("next")}
+            className="cursor-pointer bg-cyan-700 text-cyan-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
+          >
+            <ArrowBigRight />
+          </Button>
+        </div>
+        <div
+          id="canvas-wrapper"
+          className="relative rounded-lg w-[90%] sm:w-[80%] lg:w-[70%] h-102.5 md:h-132.5 lg:h-135 shadow-xl shadow-cyan-950 border-2 border-cyan-500/30 mb-4"
+        >
           <Canvas shadows camera={{ position: [0, 0, 3], fov: 45 }}>
             <ambientLight intensity={3} />
             <directionalLight
@@ -95,47 +170,44 @@ const Projects = () => {
                 </group>
               </Center>
             </Suspense>
-            <OrbitControls enablePan rotateSpeed={2} />
+            <OrbitControls
+              ref={orbitRef}
+              enablePan={canvasActive}
+              enableZoom={canvasActive}
+              enableRotate={canvasActive}
+              rotateSpeed={2}
+            />
           </Canvas>
-        </div>
-        <div className="mb-4 p-2 flex justify-center sm:justify-between items-center gap-2 md:gap-4 sm:gap-0 mt-2 w-full max-w-100">
-          <Button
-            onClick={() => handleNavigation("previous")}
-            className="cursor pointer bg-cyan-700 text-cyan-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
-          >
-            <ArrowBigLeft />
-          </Button>
-          <a
-            className="flex items-center gap-2 cursor-pointer text-white"
-            href={currentProject.href}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <p className="px-4 select-none font-light tracking-widest text-sm md:text-lg rounded-full border-2 border-cyan-500/30 hover:bg-slate-950">
-              Live Demo
-            </p>
-          </a>
-          <Button
-            onClick={() => handleNavigation("next")}
-            className="cursor pointer bg-cyan-700 text-cyan-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
-          >
-            <ArrowBigRight />
-          </Button>
-        </div>
-        <footer className="block text-center text-sm text-slate-400 px-6 leading-relaxed">
-          <p className="block text-center text-sm text-slate-400 mt-6 px-6 leading-relaxed">
-            Zoom in to get a better view of the App. Check the code on my
-            <a
-              href="https://github.com/EzequielMadrid"
-              target="_blank"
-              rel="noreferrer"
-              className="text-cyan-600 font-medium hover:text-cyan-500 transition-colors duration-300 ml-1"
+          {/* Overlay — shown when canvas is inactive */}
+          {!canvasActive && (
+            <div
+              className="absolute inset-0 flex flex-col items-center justify-end pb-6 gap-2 cursor-pointer rounded-lg"
+              onClick={() => setCanvasActive(true)}
             >
-              GitHub
-            </a>
-            .
-          </p>
-        </footer>
+              <motion.div
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-950/70 border border-cyan-500/40 backdrop-blur-sm text-cyan-400 text-sm font-light tracking-widest shadow-[0_0_16px_rgba(6,182,212,0.3)]"
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <MousePointer2 size={15} />
+                Click to interact
+              </motion.div>
+            </div>
+          )}
+          {/* "Click outside to exit" hint — shown when canvas is active */}
+          {canvasActive && (
+            <motion.div
+              className="absolute top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-slate-950/70 border border-cyan-500/20 backdrop-blur-sm text-slate-400 text-xs font-light tracking-wide pointer-events-none"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              Click outside to exit
+            </motion.div>
+          )}
+        </div>
       </div>
     </section>
   );

@@ -90,10 +90,6 @@ const Navbar = () => {
           className="flex flex-col flex-wrap justify-between gap-8 md:flex-row"
         >
           <div className="font-light">
-            <p className="tracking-wider font-bold text-slate-400">E-mail</p>
-            <p className="tracking-widest lowercase">eze*****@gmail.com</p>
-          </div>
-          <div className="font-light">
             <p className="mb-2 tracking-wider font-bold text-slate-400">
               my latest apps and personal contact
             </p>
