@@ -6,7 +6,7 @@ import AnimatedSection from "../components/AnimatedSection.jsx";
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
-  const text = `Platform empowers growing businesses and startups to achieve scalable advantage with premium results-driven web apps`;
+  const text = `Platform empowers growing businesses and startups to achieve scalable advantage with premium results-driven`;
 
   return (
     <section id="hub" className="flex flex-col justify-end min-h-screen">
@@ -22,7 +22,7 @@ const Hero = () => {
       >
         <Canvas
           shadows
-          camera={{ position: [0, -1.4, -10], fov: 17.5, near: 1, far: 20 }}
+          camera={{ position: [0, -1.4, -10], fov: 18.5, near: 1, far: 20 }}
         >
           <ambientLight intensity={0.5} />
           <Float speed={0.5}>
