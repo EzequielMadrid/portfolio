@@ -6,7 +6,7 @@ const AnimatedSection = ({ subTitle, title, text, textColor }) => {
       initial={{ y: "35vh", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-      className="pb-24"
+      className="pb-12"
     >
       <div className="flex flex-col justify-center gap-6 pt-16">
         <motion.p
