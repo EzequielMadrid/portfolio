@@ -9,7 +9,11 @@ const Hero = () => {
   const text = `Platform empowers growing businesses and startups to achieve scalable advantage with premium results-driven`;
 
   return (
-    <section id="hub" className="relative flex flex-col justify-end min-h-dvh">
+    <section
+      id="hub"
+      className="relative flex flex-col justify-end min-h-dvh overflow-hidden"
+    >
+      {" "}
       <AnimatedSection
         subTitle={"New Apps for mobiles and web platforms"}
         title={"digital experiences"}
