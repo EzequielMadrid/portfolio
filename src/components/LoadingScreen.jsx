@@ -37,7 +37,7 @@ const LoadingScreen = ({ onFinish }) => {
           }}
         />
       </div>
-      <p className="mt-6 uppercase text-xs tracking-[0.3em] text-slate-400/60">
+      <p className="mt-6 uppercase text-xs tracking-[0.3em] font-mono text-slate-400/60">
         loading experience
       </p>
     </div>
