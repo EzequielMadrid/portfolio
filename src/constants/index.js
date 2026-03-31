@@ -13,12 +13,12 @@ export const faqs = [
   {
     question: "What services do you offer?",
     answer:
-      "I design and develop modern, scalable web applications, professional systems, and high-performance digital platforms, including SaaS solutions and microservices architectures, all built with a strong focus on user experience, performance, and clean architecture, applied in real-world projects.",
+      "I design and build modern, scalable apps and high-performance platforms, focusing on clean architecture, user experience, and real-world solutions.",
   },
   {
     question: "How can I contact you?",
     answer:
-      "You can find me on my LinkedIn via the navigation menu at the top right. I'm committed to clear communication and typically respond within 24 hours.",
+      "You can find me on my LinkedIn profile. I usually respond within 24 hours.",
   },
   {
     question: "Do you work internationally?",

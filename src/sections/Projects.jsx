@@ -85,7 +85,7 @@ const Projects = () => {
       className="relative z-10 min-h-screen flex flex-col text-slate-300"
     >
       <motion.h2
-        className="mb-4 mt-6 w-fit select-none rounded-md relative mx-auto px-4 py-2 text-center text-md md:text-xl font-light uppercase tracking-wide bg-slate-950/70 border border-cyan-500/30 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.25)]"
+        className="mb-2 mt-8 w-fit select-none rounded-md relative mx-auto px-4 py-2 text-center text-md md:text-xl font-light uppercase tracking-wide bg-slate-950/70 border border-cyan-500/30 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.25)]"
         initial={{ scale: 0.8, rotate: -5, opacity: 0 }}
         animate={{ scale: 1, rotate: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 200, damping: 12, mass: 0.7 }}
@@ -98,7 +98,6 @@ const Projects = () => {
         APPs
       </motion.h2>
       <div className="flex grow flex-col gap-2 w-full items-center lg:mt-2 mt-8">
-        {/* Project info — now on top */}
         <div className="animatedText w-[90%] sm:w-[80%] lg:w-[70%] px-1 flex flex-col gap-1">
           <h3 className="font-semibold text-base md:text-lg tracking-widest uppercase underline text-slate-100">
             {currentProject.title}
@@ -108,21 +107,23 @@ const Projects = () => {
           </p>
         </div>
         {/* Nav buttons */}
-        <div className="p-2 flex justify-center sm:justify-between items-center gap-2 md:gap-4 sm:gap-0 w-full max-w-100">
+        <div className="p-2 flex justify-center items-center gap-6 w-full max-w-100 relative">
+          {/* Previous */}
           <Button
             onClick={() => handleNavigation("previous")}
-            className="cursor-pointer bg-cyan-700 text-cyan-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
+            className="group cursor-pointer bg-cyan-700 text-cyan-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_45px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300 active:scale-90"
           >
-            <ArrowBigLeft />
+            <ArrowBigLeft className="transition-transform duration-300 group-hover:-translate-x-1" />
           </Button>
-          <div className="flex items-center gap-3">
+          {/* Center actions */}
+          <div className="flex flex-col items-center gap-2 px-4 py-3 rounded-xl bg-slate-950/60 backdrop-blur-md border border-cyan-500/20 shadow-[0_0_25px_rgba(6,182,212,0.15)] hover:shadow-[0_0_45px_rgba(6,182,212,0.35)] transition-all duration-300">
             <a
-              className="flex items-center gap-2 cursor-pointer text-white"
               href={currentProject.href}
               target="_blank"
               rel="noreferrer"
+              className="group flex items-center gap-2 text-white"
             >
-              <p className="px-3 py-1 select-none font-light tracking-widest text-sm md:text-lg rounded-full border-2 border-cyan-500/30 hover:bg-slate-950">
+              <p className="px-3 py-1 font-light tracking-widest text-sm md:text-lg rounded-md border-2 border-cyan-500/30 group-hover:bg-slate-950 group-hover:border-cyan-400 transition-all duration-300">
                 Live Demo
               </p>
             </a>
@@ -130,20 +131,24 @@ const Projects = () => {
               href={currentProject.gitHref}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1 px-4  py-1 select-none font-light tracking-widest text-sm md:text-lg rounded-full border-2 border-cyan-500/30 hover:bg-slate-950 text-white transition-colors duration-300"
-              aria-label="GitHub repository"
+              className="group flex items-center gap-1 px-4 py-1 font-light tracking-widest text-sm md:text-lg rounded-md border-2 border-cyan-500/30 hover:bg-slate-950 hover:border-cyan-400 text-white transition-all duration-300"
             >
-              <Github size={18} />
+              <Github
+                size={18}
+                className="transition-transform duration-300 group-hover:rotate-12"
+              />
               <span className="hidden sm:inline">Code</span>
             </a>
           </div>
+          {/* Next */}
           <Button
             onClick={() => handleNavigation("next")}
-            className="cursor-pointer bg-cyan-700 text-cyan-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_35px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300"
+            className="group cursor-pointer bg-cyan-700 text-cyan-950  shadow-[0_0_20px_rgba(6,182,212,0.6)] hover:shadow-[0_0_45px_rgba(6,182,212,1)] hover:bg-cyan-600 transition-all duration-300 active:scale-90"
           >
-            <ArrowBigRight />
+            <ArrowBigRight className="transition-transform duration-300 group-hover:translate-x-1" />
           </Button>
         </div>
+        {/* Canvas */}
         <div
           id="canvas-wrapper"
           className="relative rounded-lg w-[90%] sm:w-[80%] lg:w-[70%] h-102.5 md:h-132.5 lg:h-135 shadow-xl shadow-cyan-950 border-2 border-cyan-500/30 mb-4"
