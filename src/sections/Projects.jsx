@@ -82,7 +82,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative z-10 min-h-screen flex flex-col text-slate-300"
+      className="relative z-10 flex flex-col text-slate-300"
     >
       <motion.h2
         className="mb-2 mt-2 w-fit select-none rounded-md relative mx-auto px-4 py-2 text-center text-md md:text-xl font-light uppercase tracking-wide bg-slate-950/70 border border-cyan-500/30 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.25)]"
@@ -197,11 +197,11 @@ const Projects = () => {
                 whileHover={{ scale: 1.05 }}
               >
                 <MousePointer2 size={15} />
-                Click to interact
+                Touch to interact
               </motion.div>
             </div>
           )}
-          {/* "Click outside to exit" hint — shown when canvas is active */}
+          {/* "Touch outside to exit" hint — shown when canvas is active */}
           {canvasActive && (
             <motion.div
               className="absolute top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-slate-950/70 border border-cyan-500/20 backdrop-blur-sm text-slate-400 text-xs font-light tracking-wide pointer-events-none"
@@ -209,7 +209,7 @@ const Projects = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              Click outside to exit
+              Touch outside to exit
             </motion.div>
           )}
         </div>
