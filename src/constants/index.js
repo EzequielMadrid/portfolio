@@ -33,7 +33,7 @@ export const myProjects = [
     title: "InterMinisterial Forum",
     description:
       "Social Networking Service (SNS) with unique sections, such as statistics, fixtures, and a Forum to share your posts with everyone. On it you can also keep up with local news and check the weather whenever you want. Follow other users and much more.",
-    href: "https://inter-ministerial.vercel.app/",
+    href: "https://interministerial.vercel.app/",
     gitHref: "https://github.com/EzequielMadrid/inter-ministerial",
     texture: "/textures/projects/project1.mp4",
   },
