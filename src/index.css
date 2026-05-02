@@ -1,25 +1,26 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-
-@custom-variant dark (&:is(.dark *));
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
-  html,
-  body,
-  #root {
-    @apply min-h-screen bg-background text-foreground;
-  }
-
-  body {
-    overscroll-behavior-y: none;
-  }
+@custom-variant dark (&:is(.dark *)); /* hero section */
+.futuristic-news-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-width: 1px;
+  border-style: solid; /* cyan-400/20 */
+  border-color: rgb(34 211 238 / 0.2);
+  transform: translate(4px, 4px);
+  z-index: -1;
 }
-
+.futuristic-news-panel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px; /* cyan-400/60 */
+  background-color: rgb(34 211 238 / 0.6);
+}
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -60,7 +61,6 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
-
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -95,7 +95,6 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
-
 .dark {
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
@@ -129,24 +128,11 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
-
-.futuristic-news-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(34 211 238 / 0.2);
-  transform: translate(4px, 4px);
-  z-index: -1;
-}
-
-.futuristic-news-panel::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: rgb(34 211 238 / 0.6);
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
